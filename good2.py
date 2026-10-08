@@ -1056,7 +1056,16 @@ def run_action_flow(bot):
 
         bot.run_action_multi(a["key"], target, params)
         return
+def manual_login_test():
+    print("\nOpening Facebook...")
+    bot = webdriver.Chrome()
+    bot.get("https://www.facebook.com/")
 
+    input("Log in manually in the browser, then press Enter here...")
+
+    print("Current URL:", bot.current_url)
+    input("Press Enter to close the browser...")
+    bot.quit()
 def main_menu():
     bot = None
     load_accounts()
